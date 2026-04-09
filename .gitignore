@@ -1,0 +1,6 @@
+.env
+*.log
+__pycache__/
+*.pyc
+.DS_Store
+.notion_to_todoist_synced.json
