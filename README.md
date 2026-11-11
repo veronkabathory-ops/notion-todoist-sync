@@ -9,6 +9,8 @@ Postavené cez [Claude Code](https://claude.com/claude-code) ako súčasť môjh
 - Načíta úlohy z konkrétnej Notion databázy, kde je zadaný používateľ priradený ako "Responsible" a status nie je `Done` ani `Archived`
 - Pre každú novú úlohu vytvorí task v Todoiste (do zvoleného projektu, s vlastnými labelmi)
 - Pamätá si už zosynchronizované úlohy v `~/.notion_to_todoist_synced.json`, aby nevytvárala duplikáty
+- Zatvára otvorené Todoist úlohy s labelom `notion_task`, ktorých Notion stránka (odkaz v popise úlohy) je `Done` alebo `Archived`. Pred zavretím zoberie úlohe label `notion_task`, aby spätný sync Todoist → Notion zavretie ignoroval. Úloha, ktorú niekto len prehodil na iného človeka, ostáva otvorená.
+- `--dry-run` (alebo `SYNC_DRY_RUN=1`) iba vypíše, čo by založila a zavrela
 - Loguje do `~/.notion_to_todoist_sync.log`
 
 Funguje len so štandardnou knižnicou Pythonu — žiadne `pip install`.
